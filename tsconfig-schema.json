@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "tstl": {
+      "description": "TypeScriptToLua options.",
+      "type": "object",
+      "properties": {
+        "luaLibImport": {
+          "description": "Specifies how js standard features missing in lua are imported.",
+          "type": "string",
+          "enum": ["none", "always", "inline", "require"]
+        },
+        "luaTarget": {
+          "description": "Specify Lua target version.",
+          "type": "string",
+          "enum": ["5.1", "5.2", "5.3", "JIT"]
+        },
+        "noHeader": {
+          "description": "Specify if a header will be added to compiled files.",
+          "type": "boolean"
+        },
+        "noHoisting": {
+          "description": "Disables hoisting.",
+          "type": "boolean"
+        },
+        "sourceMapTraceback": {
+          "description": "Applies the source map to show source TS files and lines in error tracebacks.",
+          "type": "boolean"
+        },
+        "tsTransformers": {
+          "description": "Custom TypeScript transformers.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "when": {
+                "enum": ["before", "after", "afterDeclarations"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
