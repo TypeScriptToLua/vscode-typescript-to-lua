@@ -1,0 +1,61 @@
+{
+  "name": "vscode-typescript-tstl-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "displayName": "TypeScriptToLua",
+  "description": "TypeScriptToLua support for Visual Studio Code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ark120202/vscode-typescript-tstl-plugin"
+  },
+  "license": "Apache-2.0",
+  "publisher": "ark120202",
+  "icon": "docs/icon.png",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "typescript",
+    "lua"
+  ],
+  "engines": {
+    "vscode": "^1.33.0"
+  },
+  "contributes": {
+    "typescriptServerPlugins": [
+      {
+        "name": "typescript-tstl-plugin",
+        "enableForWorkspaceTypeScriptVersions": true
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "tsconfig.json",
+        "url": "./tsconfig-schema.json"
+      },
+      {
+        "fileMatch": "tsconfig.*.json",
+        "url": "./tsconfig-schema.json"
+      },
+      {
+        "fileMatch": "tsconfig-*.json",
+        "url": "./tsconfig-schema.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "prettier --check **/*.{md,yml,json}"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "proseWrap": "always",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "typescript-tstl-plugin": "^0.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.0"
+  }
+}
