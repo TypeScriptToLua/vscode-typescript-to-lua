@@ -6,7 +6,7 @@
   "description": "TypeScriptToLua support for Visual Studio Code",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ark120202/vscode-typescript-to-lua"
+    "url": "https://github.com/TypeScriptToLua/vscode-typescript-to-lua"
   },
   "license": "Apache-2.0",
   "publisher": "ark120202",
