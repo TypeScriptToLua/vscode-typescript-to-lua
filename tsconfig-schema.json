@@ -1,10 +1,41 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
+    "compilerOptions": {
+      "properties": {
+        "plugins": {
+          "items": {
+            "properties": {
+              "transform": { "type": "string" },
+              "import": { "type": "string" },
+              "after": { "type": "boolean" },
+              "afterDeclarations": { "type": "boolean" },
+              "type": {
+                "oneOf": [
+                  { "const": "program" },
+                  { "const": "config" },
+                  { "const": "checker" },
+                  { "const": "raw" },
+                  { "const": "compilerOptions" }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "tstl": {
       "description": "TypeScriptToLua options.",
       "type": "object",
       "properties": {
+        "luaBundle": {
+          "description": "The name of the lua file to bundle output lua to. Requires luaBundleEntry.",
+          "type": "string"
+        },
+        "luaBundleEntry": {
+          "description": "The entry *.ts file that will be executed when entering the luaBundle. Requires luaBundle.",
+          "type": "string"
+        },
         "luaLibImport": {
           "description": "Specifies how js standard features missing in lua are imported.",
           "type": "string",
@@ -15,34 +46,34 @@
           "type": "string",
           "enum": ["5.1", "5.2", "5.3", "JIT"]
         },
-        "noHeader": {
-          "description": "Specify if a header will be added to compiled files.",
+        "noImplicitSelf": {
+          "description": "If \"this\" is implicitly considered an any type, do not generate a self parameter.",
           "type": "boolean"
         },
-        "noHoisting": {
-          "description": "Disables hoisting.",
+        "noHeader": {
+          "description": "Specify if a header will be added to compiled files.",
           "type": "boolean"
         },
         "sourceMapTraceback": {
           "description": "Applies the source map to show source TS files and lines in error tracebacks.",
           "type": "boolean"
         },
-        "tsTransformers": {
-          "description": "Custom TypeScript transformers.",
+        "luaPlugins": {
+          "description": "List of TypeScriptToLua plugins.",
           "type": "array",
           "items": {
             "type": "object",
             "required": ["name"],
             "properties": {
-              "name": {
-                "type": "string"
-              },
-              "when": {
-                "enum": ["before", "after", "afterDeclarations"]
-              }
+              "name": { "type": "string" },
+              "import": { "type": "string" }
             }
           }
         }
+      },
+      "dependencies": {
+        "luaBundle": ["luaBundleEntry"],
+        "luaBundleEntry": ["luaBundle"]
       }
     }
   }
