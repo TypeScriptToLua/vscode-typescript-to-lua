@@ -19,7 +19,7 @@
     "lua"
   ],
   "engines": {
-    "vscode": "^1.33.0"
+    "vscode": "^1.45.0"
   },
   "contributes": {
     "typescriptServerPlugins": [
@@ -53,7 +53,7 @@
     "trailingComma": "all"
   },
   "dependencies": {
-    "typescript-tstl-plugin": "^0.1.0"
+    "typescript-tstl-plugin": "^0.2.0"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
