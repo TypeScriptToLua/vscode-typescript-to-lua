@@ -1,47 +1,13 @@
 {
+  "title": "tsconfig.json with TSTL"
+  "description": "JSON schema for the TypeScript compiler's configuration file with TSTL",
   "$schema": "http://json-schema.org/draft-07/schema",
+  "allOf": [
+    {
+      "$ref": "https://json.schemastore.org/tsconfig"
+    }
+  ],
   "properties": {
-    "compilerOptions": {
-      "properties": {
-        "plugins": {
-          "items": {
-            "properties": {
-              "transform": {
-                "type": "string"
-              },
-              "import": {
-                "type": "string"
-              },
-              "after": {
-                "type": "boolean"
-              },
-              "afterDeclarations": {
-                "type": "boolean"
-              },
-              "type": {
-                "oneOf": [
-                  {
-                    "const": "program"
-                  },
-                  {
-                    "const": "config"
-                  },
-                  {
-                    "const": "checker"
-                  },
-                  {
-                    "const": "raw"
-                  },
-                  {
-                    "const": "compilerOptions"
-                  }
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
     "tstl": {
       "description": "TypeScriptToLua compiler options.",
       "type": "object",
