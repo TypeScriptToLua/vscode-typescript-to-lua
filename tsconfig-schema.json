@@ -1,33 +1,28 @@
 {
+  "title": "tsconfig.json with TSTL",
+  "description": "JSON schema for the TypeScript compiler's configuration file with TSTL",
   "$schema": "http://json-schema.org/draft-07/schema",
+  "allOf": [
+    {
+      "$ref": "https://json.schemastore.org/tsconfig"
+    }
+  ],
   "properties": {
-    "compilerOptions": {
-      "properties": {
-        "plugins": {
-          "items": {
-            "properties": {
-              "transform": { "type": "string" },
-              "import": { "type": "string" },
-              "after": { "type": "boolean" },
-              "afterDeclarations": { "type": "boolean" },
-              "type": {
-                "oneOf": [
-                  { "const": "program" },
-                  { "const": "config" },
-                  { "const": "checker" },
-                  { "const": "raw" },
-                  { "const": "compilerOptions" }
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
     "tstl": {
-      "description": "TypeScriptToLua options.",
+      "description": "TypeScriptToLua compiler options.",
       "type": "object",
+      "definitions": {
+        "//": {
+          "reference": "https://typescripttolua.github.io/docs/configuration#custom-options"
+        }
+      },
       "properties": {
+        "buildMode": {
+          "description": "Use buildMode: \"library\" to build publishable library packages.",
+          "type": "string",
+          "default": "library",
+          "enum": ["default", "library"]
+        },
         "luaBundle": {
           "description": "The name of the lua file to bundle output lua to. Requires luaBundleEntry.",
           "type": "string"
@@ -39,34 +34,45 @@
         "luaLibImport": {
           "description": "Specifies how js standard features missing in lua are imported.",
           "type": "string",
+          "default": "require",
           "enum": ["none", "always", "inline", "require"]
         },
         "luaTarget": {
-          "description": "Specify Lua target version.",
+          "description": "Specifies the Lua version you want to generate code for.",
           "type": "string",
+          "default": "universal",
           "enum": ["5.1", "5.2", "5.3", "JIT"]
         },
         "noImplicitSelf": {
-          "description": "If \"this\" is implicitly considered an any type, do not generate a self parameter.",
-          "type": "boolean"
+          "description": "If true, treats all project files as if they were prefixed with\n/** @noSelfInFile **/.",
+          "type": "boolean",
+          "default": false
         },
         "noHeader": {
           "description": "Specify if a header will be added to compiled files.",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         "sourceMapTraceback": {
           "description": "Applies the source map to show source TS files and lines in error tracebacks.",
+          "default": false,
           "type": "boolean"
         },
         "luaPlugins": {
           "description": "List of TypeScriptToLua plugins.",
           "type": "array",
           "items": {
+            "description": "Describes TypeScriptToLua plugin",
             "type": "object",
             "required": ["name"],
             "properties": {
-              "name": { "type": "string" },
-              "import": { "type": "string" }
+              "name": {
+                "description": "Path to the JS file, that contains the plugin code",
+                "type": "string"
+              },
+              "import": {
+                "type": "string"
+              }
             }
           }
         }
