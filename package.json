@@ -9,7 +9,7 @@
     "url": "https://github.com/TypeScriptToLua/vscode-typescript-to-lua"
   },
   "license": "Apache-2.0",
-  "publisher": "ark120202",
+  "publisher": "TypescriptToLua",
   "icon": "docs/icon.png",
   "categories": [
     "Programming Languages"
@@ -44,7 +44,8 @@
     ]
   },
   "scripts": {
-    "lint": "prettier --check **/*.{md,yml,json}"
+    "lint": "prettier --check **/*.{md,yml,json}",
+    "postversion": "git push && git push --tags"
   },
   "prettier": {
     "printWidth": 100,
