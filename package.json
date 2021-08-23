@@ -9,7 +9,7 @@
     "url": "https://github.com/TypeScriptToLua/vscode-typescript-to-lua"
   },
   "license": "Apache-2.0",
-  "publisher": "TypescriptToLua",
+  "publisher": "typescript-to-lua",
   "icon": "docs/icon.png",
   "categories": [
     "Programming Languages"
