@@ -45,6 +45,7 @@
   },
   "scripts": {
     "lint": "prettier --check **/*.{md,yml,json}",
+    "fix:prettier": "prettier --write **/*.{md,yml,json}",
     "postversion": "git push && git push --tags"
   },
   "prettier": {
