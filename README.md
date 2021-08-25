@@ -1,4 +1,4 @@
-![](https://img.shields.io/visual-studio-marketplace/v/typescript-to-lua.vscode-typescript-to-lua?color=g)
+[![](https://img.shields.io/visual-studio-marketplace/v/typescript-to-lua.vscode-typescript-to-lua?color=g&label=Visual%20Studio%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=typescript-to-lua.vscode-typescript-to-lua)
 
 A Visual Studio Code extension that adds [TypeScriptToLua](https://typescripttolua.github.io)
 support for TypeScript using the
