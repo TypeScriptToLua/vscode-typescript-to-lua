@@ -55,7 +55,7 @@
     "trailingComma": "all"
   },
   "dependencies": {
-    "typescript-tstl-plugin": "^0.2.0"
+    "typescript-tstl-plugin": "^0.3.1"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
