@@ -1,8 +1,8 @@
-[![](https://vsmarketplacebadge.apphb.com/version/ark120202.vscode-typescript-to-lua.svg)](https://marketplace.visualstudio.com/items?itemName=ark120202.vscode-typescript-to-lua)
-
 A Visual Studio Code extension that adds [TypeScriptToLua](https://typescripttolua.github.io)
 support for TypeScript using the
 [TypeScript TypeScriptToLua Language Service plugin](https://github.com/TypeScriptToLua/typescript-tstl-plugin).
+
+Marketplace link: https://marketplace.visualstudio.com/items?itemName=typescript-to-lua.vscode-typescript-to-lua
 
 ## Usage
 
