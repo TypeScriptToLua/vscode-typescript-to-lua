@@ -13,7 +13,3 @@ This extension activates automatically when project's `tsconfig.json` file has `
 - TypeScriptToLua diagnostics
 
 ![](/docs/diagnostics.png)
-
-- Custom options schema for `tsconfig.json` file
-
-![](/docs/tsconfig-schema.png)
