@@ -1,6 +1,6 @@
 {
   "name": "vscode-typescript-to-lua",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "displayName": "TypeScriptToLua",
   "description": "TypeScriptToLua support for Visual Studio Code",
